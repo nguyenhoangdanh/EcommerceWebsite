@@ -3,7 +3,6 @@
 const app = require("./app");
 const connectDatabase = require("./db/Database");
 
-
 //Handling uncaught Exception
 process.on("uncaughtException", (err) => {
     console.log(`Error: ${err.message}`);
@@ -11,11 +10,11 @@ process.on("uncaughtException", (err) => {
 });
 
 // config
-if (process.env.NODE_ENV !== "PRODUCTION") {
+// if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({
-      path: "backend/config/.env",
+      path: "config/.env",
     });
-  }
+//   }
 
 connectDatabase();
 
